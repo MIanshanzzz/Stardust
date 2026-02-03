@@ -1,0 +1,14 @@
+[Unit]
+Description=OpenClaw Process Monitor
+After=network.target
+
+[Service]
+Type=simple
+User=Administrator
+WorkingDirectory=C:\Users\Administrator\.openclaw\workspace
+ExecStart=PowerShell.exe -NoProfile -ExecutionPolicy Bypass -File openclaw-monitor.ps1
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

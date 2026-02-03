@@ -1,0 +1,71 @@
+{
+  "skill": {
+    "name": "claude-code",
+    "command": "claude {prompt}",
+    "description": "调用 Claude Code 进行代码相关任务",
+    "category": "development",
+    "icon": "💻",
+    "color": "#6366f1",
+    "aliases": [
+      "@claudecode",
+      "@claude"
+    ],
+    "arguments": {
+      "type": "textarea",
+      "label": "Claude Code Prompt",
+      "placeholder": "例如：用 TypeScript 重写这个组件...",
+      "required": true
+    },
+    "options": {
+      "project_path": {
+        "type": "string",
+        "label": "Project Path",
+        "default": ".",
+        "description": "项目路径"
+      },
+      "command": {
+        "type": "select",
+        "label": "Claude Code Command",
+        "options": [
+          {
+            "value": "build",
+            "label": "Build（构建）"
+          },
+          {
+            "value": "debug",
+            "label": "Debug（调试）"
+          },
+          {
+            "value": "navigate",
+            "label": "Navigate（导航）"
+          },
+          {
+            "value": "automate",
+            "label": "Automate（自动化）"
+          },
+          {
+            "value": "analyze",
+            "label": "Analyze（分析）"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "prompt": "用 TypeScript 重写这个 React 组件",
+        "command": "build"
+      },
+      {
+        "prompt": "为什么这个函数会返回 undefined？",
+        "command": "debug"
+      },
+      {
+        "prompt": "分析我的代码库结构",
+        "command": "analyze"
+      }
+    ],
+    "required_tools": [
+      "claude"
+    ]
+  }
+}

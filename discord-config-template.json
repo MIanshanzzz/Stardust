@@ -1,0 +1,13 @@
+{
+  "channels": {
+    "discord": {
+      "enabled": true,
+      "token": "你的Bot_Token_在这里",
+      "tokenSource": "manual",
+      "dm": {
+        "policy": "pairing",
+        "allowFrom": []
+      }
+    }
+  }
+}

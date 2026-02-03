@@ -1,0 +1,263 @@
+// TodoItem.css - 拟物风格样式
+.todo-item {
+  position: relative;
+  margin-bottom: 0.75rem;
+  animation: slideIn 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-2px);
+}
+
+.todo-item-bg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: white;
+  border-radius: 0.75rem;
+  transition: all 0.2s ease;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.12),
+    0 1px 2px rgba(0, 0, 0, 0.08),
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.todo-item-bg:hover {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    0 1px 3px rgba(0, 0, 0, 0.1),
+    0 3px 6px rgba(0, 0, 0, 0.07),
+    0 6px 12px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.todo-item-bg.completed {
+  opacity: 0.7;
+}
+
+/* 纹理 */
+.texture-paper {
+  background-color: #fff;
+  background-image:
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0.02) 1px,
+      transparent 1px
+    );
+  background-size: 10px 10px;
+}
+
+.texture-noise {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.05;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  border-radius: 0.75rem;
+  z-index: 1;
+}
+
+/* 复选框 */
+.todo-checkbox {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.2s ease;
+  box-shadow:
+    0 2px 4px rgba(102, 126, 234, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.15);
+  z-index: 2;
+}
+
+.todo-checkbox:hover {
+  transform: scale(1.05);
+  box-shadow:
+    0 4px 8px rgba(102, 126, 234, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.todo-checkbox svg {
+  width: 16px;
+  height: 16px;
+}
+
+.todo-checkbox.completed {
+  background: #27ae60;
+  box-shadow:
+    0 2px 4px rgba(39, 174, 96, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.todo-checkbox.completed:hover {
+  background: #2ecc71;
+  box-shadow:
+    0 4px 8px rgba(46, 204, 113, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 内容区域 */
+.todo-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-text {
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.2s ease;
+  word-break: break-word;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #999;
+  font-style: italic;
+}
+
+.todo-text:focus {
+  outline: none;
+}
+
+/* 编辑输入框 */
+.todo-edit-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  color: #333;
+  background: #fafafa;
+  border: 2px solid #667eea;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.todo-edit-input:focus {
+  box-shadow:
+    0 0 0 3px rgba(102, 126, 234, 0.3),
+    0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 操作按钮 */
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.todo-action-btn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #999;
+  transition: all 0.2s ease;
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.todo-action-btn:hover {
+  color: #667eea;
+  border-color: #667eea;
+  transform: translateY(-1px);
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.15),
+    0 1px 2px rgba(0, 0, 0, 0.1),
+    inset 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.todo-action-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+.todo-action-btn.save {
+  color: #27ae60;
+}
+
+.todo-action-btn.save:hover {
+  background: #27ae60;
+  color: white;
+}
+
+.todo-action-btn.cancel {
+  color: #e74c3c;
+}
+
+.todo-action-btn.cancel:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+.todo-action-btn.delete {
+  color: #e74c3c;
+}
+
+.todo-action-btn.delete:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+/* 完成时的划线 */
+.todo-strikethrough {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #27ae60;
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .todo-item-bg {
+    padding: 0.75rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .todo-action-btn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .todo-action-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* 动画 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
