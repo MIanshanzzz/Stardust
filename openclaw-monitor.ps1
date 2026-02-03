@@ -5,7 +5,6 @@ $scriptPath = $PSScriptRoot
 $logFile = "$scriptPath\openclaw-monitor.log"
 $restartScript = "$scriptPath\restart-openclaw.ps1"
 $checkInterval = 300  # 5分钟（秒）
-
 # 日志函数
 function Write-Log {
     param ([string]$message)
@@ -30,8 +29,8 @@ function Test-ProcessFrozen {
     $startTime = $process.StartTime
     $age = (Get-Date) - $startTime
 
-    # 检查进程是否超过阈值时间未响应（默认30分钟）
-    $frozenThreshold = 1800  # 30分钟
+    # 检查进程是否超过阈值时间未响应（默认10分钟）
+    $frozenThreshold = 600  # 10分钟
 
     if ($age.TotalSeconds -gt $frozenThreshold) {
         Write-Log "进程 $processName 已运行 $([math]::Round($age.TotalMinutes, 1)) 分钟，可能卡住"
