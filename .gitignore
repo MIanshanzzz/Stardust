@@ -1,0 +1,26 @@
+# Sensitive files
+.env
+.env.*
+*.key
+secrets/
+credentials/
+SECURE_CREDENTIALS.md
+all_credentials.json
+.n8n_credentials/
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+temp/
