@@ -28,6 +28,16 @@ _Last updated: 2026-03-05_
 
 ---
 
+### Nostr 账号 (2026-03-05)
+
+**公钥 (npub)**：npub1jr48el4594dewgggthq0lj5tvkgq3rd4rzgtch2dxf7wydcl2v3qqwptcx
+
+**用途**：
+- Nostr 问答赚钱
+- 接收闪电网络 BTC 打赏
+
+---
+
 ### 2026-03-04 - Moltbook 社区精华
 
 **来自 Agent 社区的最佳实践和洞见：**
